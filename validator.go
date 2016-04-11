@@ -91,6 +91,14 @@ func IsAlpha(str string) bool {
 	return rxAlpha.MatchString(str)
 }
 
+// IsAlphaSpace check if the string contains only letters (a-zA-Z) and space. Empty string is invalid.
+func IsAlphaSpace(str string) bool {
+	if IsNull(str) {
+		return false
+	}
+	return rxAlphaSpace.MatchString(str)
+}
+
 //IsUTFLetter check if the string contains only unicode letter characters.
 //Similar to IsAlpha but for all languages. Empty string is valid.
 func IsUTFLetter(str string) bool {
@@ -113,6 +121,14 @@ func IsAlphanumeric(str string) bool {
 		return true
 	}
 	return rxAlphanumeric.MatchString(str)
+}
+
+// IsAlphanumericSpace check if the string contains only letters and numbers and space. Empty string is invalid.
+func IsAlphanumericSpace(str string) bool {
+	if IsNull(str) {
+		return false
+	}
+	return rxAlphanumericSpace.MatchString(str)
 }
 
 // IsUTFLetterNumeric check if the string contains only unicode letters and numbers. Empty string is valid.
