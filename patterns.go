@@ -38,6 +38,7 @@ const (
 	UnixPath          string = `^((?:\/[a-zA-Z0-9\.\:]+(?:_[a-zA-Z0-9\:\.]+)*(?:\-[\:a-zA-Z0-9\.]+)*)+\/?)$`
 	Semver            string = "^v?(?:0|[1-9]\\d*)\\.(?:0|[1-9]\\d*)\\.(?:0|[1-9]\\d*)(-(0|[1-9]\\d*|\\d*[a-zA-Z-][0-9a-zA-Z-]*)(\\.(0|[1-9]\\d*|\\d*[a-zA-Z-][0-9a-zA-Z-]*))*)?(\\+[0-9a-zA-Z-]+(\\.[0-9a-zA-Z-]+)*)?$"
 	tagName           string = "valid"
+	AccountName       string = "^[a-zA-Z0-9\\s\\-`'&.,]+$"
 )
 
 // Used by IsFilePath func
@@ -84,4 +85,5 @@ var (
 	rxWinPath           = regexp.MustCompile(WinPath)
 	rxUnixPath          = regexp.MustCompile(UnixPath)
 	rxSemver            = regexp.MustCompile(Semver)
+	rxAccountName       = regexp.MustCompile(AccountName)
 )
