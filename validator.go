@@ -100,11 +100,11 @@ func IsAlphaSpace(str string) bool {
 }
 
 // IsValidAccountName check if the string contains only letters (a-zA-Z) and space, &, `, . ,. Empty string is invalid.
-func IsValidAccountName(str string) bool {
+func IsValidRelaxedName(str string) bool {
 	if IsNull(str) {
 		return false
 	}
-	return rxAccountName.MatchString(str)
+	return rxRelaxedName.MatchString(str)
 }
 
 //IsUTFLetter check if the string contains only unicode letter characters.
